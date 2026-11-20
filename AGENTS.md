@@ -347,7 +347,7 @@ This is a community-driven project. Contributions are welcome! Please see:
 
 ## MCP Server
 
-The repository includes an MCP (Model Context Protocol) Server for searching and installing resources directly from this repository. Docker is required to run the server.
+The repository includes an MCP (Model Context Protocol) Server for searching and installing resources directly from this repository. Docker is not required; it runs under Windows Subsystem for Linux (WSL 3.0.5 or later) with the .NET 10 SDK (see `website/data/tools.yml`).
 
 ## License
 

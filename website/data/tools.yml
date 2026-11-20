@@ -12,9 +12,12 @@ tools:
     category: MCP Servers
     featured: true
     requirements:
-      - Docker installed and running
+      - Windows Subsystem for Linux (WSL) version 3.0.5 or later (run wsl --update) with a Debian/Ubuntu distro
+      - .NET 10 SDK installed inside WSL
+      - Repository cloned in WSL at ~/mcp-dotnet-samples (git clone https://github.com/microsoft/mcp-dotnet-samples ~/mcp-dotnet-samples)
     links:
       blog: https://developer.microsoft.com/blog/announcing-awesome-copilot-mcp-server
+      github: https://github.com/microsoft/mcp-dotnet-samples/tree/main/awesome-copilot
       vscode: https://aka.ms/awesome-copilot/mcp/vscode
       vscode-insiders: https://aka.ms/awesome-copilot/mcp/vscode-insiders
       visual-studio: https://aka.ms/awesome-copilot/mcp/vs
@@ -25,19 +28,20 @@ tools:
           "servers": {
             "awesome-copilot": {
               "type": "stdio",
-              "command": "docker",
+              "command": "wsl.exe",
               "args": [
+                "--",
+                "dotnet",
                 "run",
-                "-i",
-                "--rm",
-                "ghcr.io/microsoft/mcp-dotnet-samples/awesome-copilot:latest"
+                "--project",
+                "~/mcp-dotnet-samples/awesome-copilot/src/McpSamples.AwesomeCopilot.HybridApp"
               ]
             }
           }
         }
     tags:
       - mcp
-      - docker
+      - wsl
       - search
       - install
 
